@@ -80,4 +80,4 @@ bin/bootstrap-task-memory.sh 新项目接入脚本（一条命令）
 
 ## License
 
-见 [LICENSE](LICENSE)（待定）。
+[MIT](LICENSE)
