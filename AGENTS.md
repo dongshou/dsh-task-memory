@@ -11,3 +11,8 @@
 
 - DSH agent：用 `skill` 工具加载 `task-memory`，内含完整模板（开工确认、评论格式、三层上浮规则）。
 - 其他 agent（Claude Code / Codex 等）：直接阅读 `.dsh/skills/task-memory/SKILL.md`。
+
+## 新项目接入
+
+- DSH agent：加载 `project-init` 技能，按步骤自动完成（协议文件复制 → git init → 私有仓库 → 置顶 #1 项目记忆）；或直接运行 `bin/bootstrap-task-memory.sh <项目目录> [仓库名]`。
+- 其他 agent：阅读 `.dsh/skills/project-init/SKILL.md` 手动执行。
