@@ -11,7 +11,7 @@ description: Use when creating a new project that should join the task-memory pr
 
 1. 当前仓库已有 `AGENTS.md` 与 `.dsh/skills/task-memory/` → 直接复制；
 2. 本机用户级 `~/.dsh/skills/task-memory/` 存在 → 技能复制为 `<项目>/.dsh/skills/task-memory/`，`AGENTS.md` 从协议仓库取；
-3. 都没有 → `gh repo clone dongshou/dsh-workhere /tmp/dsh-workhere-protocol`，从其复制两份文件。
+3. 都没有 → `gh repo clone dongshou/dsh-task-memory /tmp/dsh-task-memory-protocol`，从其复制两份文件。
 
 ## 执行步骤
 

@@ -1,4 +1,4 @@
-# dsh-workhere — AI Agent 任务记忆协议
+# dsh-task-memory — AI Agent 任务记忆协议
 
 用 GitHub 原生能力（Issue + Wiki + skills + git）为多个 AI agent 建立**任务级共享记忆**：跨 session 续接、跨 agent 协作、跨设备同步。**零自研服务、零运行时代码。**
 
@@ -44,11 +44,11 @@ Wiki 页面目录**不预设**，按项目实际定义：用项目语言命名�
 ### 新项目
 
 ```bash
-git clone https://github.com/dongshou/dsh-workhere.git
-bash dsh-workhere/bin/bootstrap-task-memory.sh <项目目录> [仓库名]
+git clone https://github.com/dongshou/dsh-task-memory.git
+bash dsh-task-memory/bin/bootstrap-task-memory.sh <项目目录> [仓库名]
 ```
 
-（DSH agent 可直接说："用 project-init 技能创建项目"。Wiki 首页需人工在网页激活一次，见 [Wiki: 已知问题](https://github.com/dongshou/dsh-workhere/wiki/已知问题)。）
+（DSH agent 可直接说："用 project-init 技能创建项目"。Wiki 首页需人工在网页激活一次，见 [Wiki: 已知问题](https://github.com/dongshou/dsh-task-memory/wiki/已知问题)。）
 
 ### 历史项目
 
@@ -71,8 +71,8 @@ bin/bootstrap-task-memory.sh 新项目接入脚本（一条命令）
 
 本仓库自己就按这套协议运行（吃自己的狗粮）：
 
-1. 改进意见 → 开 [issue](https://github.com/dongshou/dsh-workhere/issues) 讨论；
-2. 定案的决定 → 写进 [Wiki: 变更与决策](https://github.com/dongshou/dsh-workhere/wiki/变更与决策)；
+1. 改进意见 → 开 [issue](https://github.com/dongshou/dsh-task-memory/issues) 讨论；
+2. 定案的决定 → 写进 [Wiki: 变更与决策](https://github.com/dongshou/dsh-task-memory/wiki/变更与决策)；
 3. 成熟可复用的模式 → 升格为 `.dsh/skills/` 里的技能；
 4. 修改提交 PR，欢迎 fork / clone / 贡献。
 
