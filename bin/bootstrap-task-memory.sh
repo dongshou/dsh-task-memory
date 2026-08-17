@@ -39,5 +39,6 @@ fi
 
 echo "✅ $TARGET 已接入任务记忆协议"
 echo "   仓库: https://github.com/$OWNER/$REPO_NAME"
-echo "   #1「项目记忆」已置顶"
+echo "   #1「项目记忆」已置顶（过渡形态）"
+echo "   下一步: 在网页打开上面的仓库 /wiki 点一次 Create the first page，激活 Wiki 后把内容迁入"
 echo "   开始新任务: cd $TARGET && gh issue create --title <任务名> --label area:memory"
