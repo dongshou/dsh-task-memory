@@ -37,7 +37,7 @@ description: Use when creating a new project that should join the task-memory pr
 
 4. **初始化项目层 Wiki**：
    - GitHub 无公开 Wiki API，首次需人操作一次：请用户在网页打开 `<仓库URL>/wiki`，点击 "Create the first page"。
-   - 激活后 agent 维护：`git clone <仓库URL>.wiki.git`，写入 `Home.md`（项目记忆首页 + 索引），提交推送。
+   - 激活后 agent 维护：`git clone <仓库URL>.wiki.git`，写入 `Home.md`（项目简介 + 页面索引）；具体分页按项目实际定义——要求见 task-memory 技能的「Wiki 页面定义要求」，有真实内容才建页。提交推送。
    - 用户暂未激活时：临时 `gh issue create --title "项目记忆"` 并 `gh issue pin 1` 过渡；Wiki 激活后把内容迁过去并关闭该 issue。
 
 5. **向用户回显**：仓库 URL、Wiki 激活状态（或 #1 过渡状态）、开第一个任务的命令（`gh issue create --title <任务名>`）。
