@@ -66,9 +66,23 @@ bash dsh-task-memory/bin/bootstrap-task-memory.sh <项目目录> [仓库名]
 
 （DSH agent 可直接说："用 project-init 技能创建项目"。Wiki 首页需人工在网页激活一次，见 [Wiki: 已知问题](https://github.com/dongshou/dsh-task-memory/wiki/已知问题)。）
 
-### 历史项目
+### 历史项目：零接入模式（推荐）
 
-只做三件事：① 复制 `AGENTS.md` + `.dsh/skills/` 进仓库（与已有 CLAUDE.md 等合并，不覆盖）；② 播种 Wiki（写项目简介/架构/已知问题）；③ 给**当前要做的**工作开 issue。不回填历史，只接未来。
+协议仓库是公开的，**文件不用复制进项目**——开工时让 agent 直接读协议仓库即可。把这句启动语发给任何 agent：
+
+```
+先读协议：curl -s https://raw.githubusercontent.com/dongshou/dsh-task-memory/main/AGENTS.md
+再读模板：curl -s https://raw.githubusercontent.com/dongshou/dsh-task-memory/main/.dsh/skills/task-memory/SKILL.md
+然后按协议对当前项目的 issue #N 开工：读时间线尾部 → 回显确认 → 干活 → checkpoint 评论。
+```
+
+适用：大量历史项目、低频使用、不想动项目仓库。代价：每次开工依赖网络读协议。
+
+### 历史项目：深度接入（可选）
+
+项目高频使用后，把协议文件一次性复制进仓库（协议随仓库走、离线可用）：
+
+① 复制 `AGENTS.md` + `.dsh/skills/` 进仓库（与已有 CLAUDE.md 等合并，不覆盖）；② 播种 Wiki（写项目简介/架构/已知问题）；③ 给**当前要做的**工作开 issue。不回填历史，只接未来。
 
 ### 日常使用
 
