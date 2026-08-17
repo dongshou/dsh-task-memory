@@ -9,8 +9,11 @@ description: 任务记忆协议操作手册。Use when starting work on a task (
 
 ## 开工（OPEN）
 
-1. 读目标 issue 的正文 + 最后 3~5 条评论。
-2. 向用户回显 5 行确认：我理解的目标 / 当前进行到哪 / 下一步做什么 / 已知阻塞 / 关联任务。
+1. 明确任务 issue 号：用户指定（"继续 #12"）或查 backlog 挑任务。会话标题可用「#号 任务名」形式；会话首条消息带 issue 号，便于反查。
+2. 读目标 issue 的正文 + 最后 3~5 条评论。
+3. 向用户回显 5 行确认（含 issue 号）：我理解的目标 / 当前进行到哪 / 下一步做什么 / 已知阻塞 / 关联任务。
+
+> 关联机制：session ↔ 任务的关联靠 OPEN 仪式 + 评论归属——checkpoint 评论发到哪个 issue 就归属哪个任务，评论带「来源」字段即可反查到 session。
 
 ## 收工（CHECKPOINT）——何时写评论
 
@@ -55,6 +58,14 @@ description: 任务记忆协议操作手册。Use when starting work on a task (
 示例（协议主仓库 `dongshou/dsh-task-memory` 的 Wiki）：Home（简介+索引）/ 架构 / 环境与部署 / 变更与决策 / 已知问题——仅作参考，不是模板。
 
 调用节奏：任务层每回合读尾部；项目层每开工读一次摘要；系统层按需加载，不常驻注入。
+
+## 任务拆分（分支）
+
+issue 时间线刻意保持线性（append-only 是真相唯一性的根基），拆分一律用**新 issue + 父子引用**：
+
+- 子任务：`gh issue create --title "..." --parent <父issue号>`（GitHub sub-issue，父页面自动列出子任务）；
+- 拆独立任务：新 issue，正文写「从 #N 拆出」；
+- 会话 fork 继续同一任务 → **不开新 issue**，继续往原 issue 写评论。
 
 ## 事实更新规则
 

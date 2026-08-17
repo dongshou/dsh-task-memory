@@ -39,6 +39,22 @@ Wiki 页面目录**不预设**，按项目实际定义：用项目语言命名�
 3. **永不改旧评论**：事实更新 = 追加新评论并声明取代；最新评论即当前真相。
 4. **三层各归其位**：任务专属知识随 issue 归档；跨任务的进 Wiki；跨项目的升格技能。
 
+## 同步与跨 agent
+
+**跨设备同步**：一切状态都在 git 数据里——Issues、Wiki、技能文件都是 git 仓库的一部分，`push/pull` 即同步。换设备 `git clone` 即可无缝接续，不需要任何中心化服务迁移。
+
+**跨 agent 协作**：协议不绑定任何 agent 产品，靠三层通用入口：
+
+| 入口 | 机制 |
+|---|---|
+| 纪律 | `AGENTS.md` 是跨产品通用协议文件，Claude Code / Codex / Cursor / DSH 等自动读取 |
+| 工具 | 读写 issue 用 `gh` CLI 或 GitHub MCP server——各 agent 产品均支持（DSH 内置 MCP 客户端，Claude Code / Codex 原生支持） |
+| 技能 | `.dsh/skills/*/SKILL.md` 是普通 markdown，非 DSH 的 agent 可直接阅读 |
+
+**审计**：issue 评论自带作者/时间/编辑历史，代码和文档有 git blame——谁在哪个会话改了什么，双向可查（评论的「来源」字段 ↔ session 首条消息的 issue 号）。
+
+**任务拆分（分支）**：issue 时间线刻意线性；拆分 = 新 issue + 父子引用（`gh issue create --parent <父issue号>` 创建 sub-issue，或正文写「从 #N 拆出」）。
+
 ## 快速开始
 
 ### 新项目
